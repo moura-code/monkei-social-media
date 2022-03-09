@@ -7,7 +7,8 @@ from django.urls import reverse
 # Create your views here.
 def home(request):
     return render(request,'main/main.html')
-
+def about(request):
+    return render(request,'main/about.html')
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
