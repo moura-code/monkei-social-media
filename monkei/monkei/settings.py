@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mainpage',
+    'crispy_forms',
+    'mainpage.apps.MainpageConfig',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # typically, os.path.join(os.path.dirname(__file__), 'media')
 MEDIA_ROOT = 'mainpage/static/media'
 MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = 'monkei/home'
+CRISPY_TEMPLATE_PACK = "bootstrap4"
