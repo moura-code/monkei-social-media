@@ -10,11 +10,31 @@
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <div>
-          <a href='' class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            {% load static %} <img src="{% static 'media/monkey-logo.png' %}"alt="logo" id="logo"/>
+          <a href='{%url "home" %}' class="nav-link text-secondary">
+            {% load static %} <img src="{% static 'media/monkey-logo.png' %}"alt="Home" id="logo" class = 'bi d-block mx-auto mb-1'>
+            <label for="logo" class="color">Home</label>
+
 
           </a>
+
         </div>
+        <div>
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href='{%url "about" %}' class="nav-link text-secondary">
+              {% load static %} <img src="{% static 'media/mamaco.png' %}"alt="About us" id="about" class = 'bi d-block mx-auto mb-1'>
+
+            <label for="about" class="color"> About</label>
+
+            </a>
+          </div>
+        </div>
+        <div class='nav-link text-secondary'>
+
+             {% load static %} <button  id="button" type="button" class="bg-dark btn-size btn-toggle" onclick="darkmode()"  >  <img src="{% static 'media/mama2.png' %}"  class = 'bi d-block mx-auto mb-1' >
+            <label for="button" class="color" >Dark mode</label>
+        </button>
+
+          </div>
       </div>
     </div>
   </header>
@@ -25,5 +45,6 @@
     {% block content %}
     {% endblock content%}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="{% static 'css/main.js' %}"></script>
   </body>
 </html>

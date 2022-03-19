@@ -50,7 +50,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.request",
+)
 ROOT_URLCONF = 'monkei.urls'
 
 TEMPLATES = [
@@ -126,6 +132,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # typically, os.path.join(os.path.dirname(__file__), 'media')
 MEDIA_ROOT = 'mainpage/static/media'
 MEDIA_URL = '/media/'
+AUTHENTICATION_BACKENDS = ['mainpage.models.EmailBackend']
 
-LOGIN_REDIRECT_URL = 'monkei/home'
 CRISPY_TEMPLATE_PACK = "bootstrap4"

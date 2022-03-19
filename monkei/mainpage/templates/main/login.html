@@ -4,11 +4,16 @@
 <title>login</title>
 {% endblock title%}
 {%block content%}
- <div class="form-group">
-       <form method="POST">
-       {% csrf_token %}
-       {{ form|crispy }}
-       <input type="submit" class="btn btn-primary" >
+<div class = "container">
+    <div class="form-group">
+       <form method="post" action="./?next={{ redirect_to }}">
+           {% csrf_token %}
+           {{ form|crispy }}
+           {% if request.GET.next %}
+                <input type="hidden" name="next" value="{{request.GET.next}}" />
+           {% endif %}
+           <button type="submit">Login</button>
        </form>
- </div>
+    </div>
+</div>
 {% endblock content%}
