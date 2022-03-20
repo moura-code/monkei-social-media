@@ -1,0 +1,20 @@
+{%extends 'main/template.html'%}
+{% load crispy_forms_tags %}}
+{% block title%}
+<title>Register</title>
+{% endblock title%}
+{%block content%}
+<div class='position-absolute top-20 end-0'>
+    <a class="btn btn-primary" href="{% url 'login' %}" role="button">Link</a>
+</div>
+<div class="container">
+    <div class="form-group">
+       <form method="POST" action="{% url 'register' %}">
+       {% csrf_token %}
+       {{ form|crispy }}
+       <input type="submit" class="btn btn-primary" >
+       </form>
+    </div>
+
+ </div>
+{% endblock content%}

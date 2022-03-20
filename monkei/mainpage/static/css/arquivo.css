@@ -6,25 +6,22 @@
      width:45px;
     height:44px;
 }
-body {
-  --text-color: #222;
-  --bkg-color: #fff;
-}
-body.dark-theme {
-  --text-color: #eee;
-  --bkg-color: #121212;
+
+h1{
+color: #32a852;
+margin-top:30px;
 }
 
-@media (prefers-color-scheme: dark) {
-  /* defaults to dark theme */
-  body {
-    --text-color: #eee;
-    --bkg-color: #121212;
-  }
-  body.light-theme {
-    --text-color: #222;
-    --bkg-color: #fff;
-  }
+button{
+    cursor: pointer;
+    border: 1px solid #555;
+    text-align: center;
+    padding: 5px;
+    margin-left: 8px;
+}
+.dark-mode{
+    background-color: #222;
+    color: #e6e6e6;
 }
 
 * {
@@ -47,6 +44,7 @@ button { border:none  }
 }
 .color{
 color:#8b8c86!important;
+<<<<<<< HEAD
 }
 #git{
      width:45px;
@@ -61,4 +59,5 @@ color:#8b8c86!important;
 }
 ul{
 display:inline;
+
 }

@@ -4,4 +4,9 @@
 {% endblock title%}
 {%block content%}
 <h1>liju8buhb oh</h1>
+{% if user.is_authenticated %}
+    <h1> vai te toma no cu</h1>
+{% else %}
+<a href='/login/?next={{ request.path }}'>Login</a>
+{% endif %}
 {% endblock content%}
