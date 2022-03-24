@@ -7,8 +7,9 @@ from django_countries.fields import CountryField
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.backends import ModelBackend, UserModel
 from django.db.models import Q
-
-
+from django.core.exceptions import MultipleObjectsReturned
+from annoying.fields import AutoOneToOneField
+from django.contrib.auth import get_user_model
 class EmailBackend(ModelBackend):
     def authenticate(self, request, username=None, password=None, **kwargs):
         try:
@@ -29,13 +30,33 @@ class EmailBackend(ModelBackend):
 
         return user if self.user_can_authenticate(user) else None
 
+
+class hashtag(models.Model):
+
+    nome = models.CharField(max_length=10,default=None,primary_key=True)
+
+
 class Post(models.Model):
-    title = models.CharField(max_length=100)
-    content = models.TextField(blank=True)
-    image = models.ImageField(blank=True)
-    file = models.FileField(blank=True)
+    id = models.BigAutoField(primary_key=True)
+    title = models.CharField(max_length=100,)
+    content = models.TextField(blank=True,)
+    image = models.ImageField(blank=True, null=True)
+    file = models.FileField(blank=True,null=True)
     date = models.DateTimeField(default=timezone.now)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE )
+    def __str__(self):
+        return f'{self.title} -- {self.id}'
+
+
+
+class bananas(models.Model):
+    id_post = models.OneToOneField(Post,blank=True,null=True,on_delete=models.CASCADE)
+    banana1 = models.IntegerField(default=0)
+    banana2 = models.IntegerField(default=0)
+
+    def __str__(self):
+        return f'{self.id_post}'
+
 
 
 class Profile(models.Model):
@@ -58,7 +79,7 @@ class Profile(models.Model):
         instance.profile.save()
 
     def __str__(self):
-        return self.user
+        return f'{self.user}'
 
     class Meta:
         db_table = 'state'
