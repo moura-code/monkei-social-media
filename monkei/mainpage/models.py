@@ -31,11 +31,14 @@ class EmailBackend(ModelBackend):
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
-    content = models.TextField(blank=True)
-    image = models.ImageField(blank=True)
-    file = models.FileField(blank=True)
+    content = models.TextField(null=True,blank=True)
+    image = models.ImageField(null=True,blank=True)
+    file = models.FileField(blank=True, null=True)
     date = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
 
 
 class Profile(models.Model):
