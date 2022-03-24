@@ -8,7 +8,7 @@
 <div class="title">
     <h1>Post</h1>
     <div class = "container">
-    <form action = '{% url "post" %}' method = "POST">
+    <form action = '{% url "post" %}' method = "POST" enctype="multipart/form-data">
         {% csrf_token %}
         {% for field in form %}
     <div class="fieldWrapper">
