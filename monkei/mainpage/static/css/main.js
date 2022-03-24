@@ -20,4 +20,3 @@ function darkmode() {
 
   document.getElementById("theme").textContent = localStorage.getItem("theme");
 }
-
