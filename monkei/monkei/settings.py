@@ -134,5 +134,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = 'mainpage/static/media'
 MEDIA_URL = '/media/'
 AUTHENTICATION_BACKENDS = ['mainpage.models.EmailBackend']
-
+LOGIN_URL = 'login'
 CRISPY_TEMPLATE_PACK = "bootstrap4"

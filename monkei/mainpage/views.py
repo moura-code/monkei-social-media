@@ -1,10 +1,11 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from .forms import SignUpForm, UserLoginForm, PostForm
+from .forms import *
 from .models import Post ,bananas
 from django.contrib.auth import authenticate, login
 from .models import Profile
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -58,8 +59,9 @@ def login_page(request):
         return redirect('home')
     else:
         if request.method == 'POST':
-            form = UserLoginForm(request.POST)
+            form = UserLoginForm(data=request.POST)
             if form.is_valid():
+
                 user = authenticate(
                     username=form.cleaned_data['username'],
                     password=form.cleaned_data['password'],
@@ -74,4 +76,24 @@ def login_page(request):
             form = UserLoginForm()
         return render(request, 'main/login.html', context={'form': form})
 
+@login_required
+def profile(request):
+    if request.method == 'POST':
 
+        u_form = UserUP_form(request.POST, instance=request.user)
+        p_form = ProfileUP_form(request.POST,
+                                   request.FILES,
+                                   instance=request.user.profile)
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+
+            return redirect('home')
+
+    else:
+        u_form = UserUP_form(instance=request.user)
+        p_form = ProfileUP_form(instance=request.user.profile)
+
+
+    return render(request, 'main/profile.html', {'u_form': u_form,'p_form': p_form
+    })

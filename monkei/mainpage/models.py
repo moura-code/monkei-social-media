@@ -65,15 +65,12 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, blank=True)
     location = CountryField()
-    user_avatar = models.ImageField(upload_to="You/media/uploads", blank=True,null=True)
+    user_avatar = models.ImageField(upload_to="images/", default='default.jpg')
     datecreate = models.DateTimeField(default=timezone.now)
-    gmail = models.CharField(max_length=100)
 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
-        try:
-            instance.profile.save()
-        except ObjectDoesNotExist:
+        if created:
             Profile.objects.create(user=instance)
 
     @receiver(post_save, sender=User)
@@ -81,11 +78,11 @@ class Profile(models.Model):
         instance.profile.save()
 
     def __str__(self):
-        return f'{self.user}'
+        return f'{self.user} Profile'
 
     class Meta:
         db_table = 'state'
-        verbose_name = 'User'
+        verbose_name = 'Profile'
 
 
 
