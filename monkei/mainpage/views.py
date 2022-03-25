@@ -14,8 +14,8 @@ def about(request):
 
 
 def home(request,message=None):
-    context = {'posts': Post.objects.all()}
-    return render(request,'main/main.html', context=message)
+    context = {'posts': Post.objects.all(), 'message':message }
+    return render(request,'main/main.html', context=context)
 
 
 def post(request):
@@ -23,9 +23,9 @@ def post(request):
         return home(request, {'message':'You are not log in'})
 
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            a = Post(title=form.cleaned_data['title'].capitalize(), content=form.cleaned_data['content'], file=form.cleaned_data['file'],author=User.objects.get(id=request.user.id))
+            a = Post(title=form.cleaned_data['title'].capitalize(), content=form.cleaned_data['content'], file=request.FILES['file'],image=request.FILES['image'],author=User.objects.get(id=request.user.id))
             a.save()
             bananas(id_post=a).save()
 

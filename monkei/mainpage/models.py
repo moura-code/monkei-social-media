@@ -48,6 +48,7 @@ class Post(models.Model):
 
 
 
+
 class bananas(models.Model):
     id_post = models.OneToOneField(Post,blank=True,null=True,on_delete=models.CASCADE)
     banana1 = models.IntegerField(default=0)
@@ -57,8 +58,7 @@ class bananas(models.Model):
         return f'{self.id_post}'
 
 
-    def __str__(self):
-        return self.title
+
 
 
 class Profile(models.Model):

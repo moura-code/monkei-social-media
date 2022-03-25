@@ -1,0 +1,42 @@
+
+import sys
+import os
+import re
+import operator
+username info erro
+sss ,1,2
+file = syslog.log
+
+
+username_sorted  = {'username': {'INFO': 2, 'ERROR': 5},...}
+Error_sorted = {'Error2': 3, 'Error3': 2, 'Error': 1}
+
+def error_generate(filename):
+	Error={}
+	username={}
+	with open(filename,'r') as f:
+		for line in f:
+			result = re.search(r'ticky:.(\w+)..([\w ]+).+\((\w+)\)',line)
+			if result[1] == 'ERROR':
+				Error[result[2]] = Error.get(result[2],0) + 1
+			if result[3] not in username:
+				username[result[3]] = {}
+			if result[1] == 'INFO':
+				username[result[3]]['INFO'] = username[result[3]].get('INFO',0) + 1
+			elif result[1] == 'ERROR':
+				username[result[3]]['ERROR'] = username[result[3]].get('INFO',0) + 1
+	Error_sorted = dict(sorted(num.items(), key=lambda item: item[1],reverse=True))
+	username_sorted = dict(sorted(username.items(), key=lambda x: x[0].lower()))
+	with open(ss,'w') as f:
+		for a in username_sorted.items():
+		
+				
+		
+
+
+
+
+       
+
+                        
+		
