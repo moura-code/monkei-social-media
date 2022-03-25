@@ -7,11 +7,9 @@
     <list default="true" id="e6697022-d7ab-457d-96f2-07e648db9506" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/monkei/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/monkei/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monkei/mainpage/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/monkei/mainpage/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monkei/mainpage/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/monkei/mainpage/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monkei/mainpage/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/monkei/mainpage/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monkei/mainpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/monkei/mainpage/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monkei/mainpage/static/css/_reboot.scss" beforeDir="false" afterPath="$PROJECT_DIR$/monkei/mainpage/static/css/_reboot.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/monkei/monkei/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/monkei/monkei/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monkei/monkei/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/monkei/monkei/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +47,11 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Pedro\OneDrive\Área de Trabalho\monkei-social-media\monkei\mainpage\templates\main" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
