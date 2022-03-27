@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e6697022-d7ab-457d-96f2-07e648db9506" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monkei/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/monkei/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monkei/mainpage/static/css/_reboot.scss" beforeDir="false" afterPath="$PROJECT_DIR$/monkei/mainpage/static/css/_reboot.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monkei/monkei/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/monkei/monkei/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monkei/monkei/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/monkei/monkei/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
